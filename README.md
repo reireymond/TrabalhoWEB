@@ -12,14 +12,10 @@
 
 O código fonte está organizado da seguinte maneira para garantir a modularidade e a fácil manutenção:
 
-`meu-projeto-web/`
-├── `css/`
-│ &emsp;&emsp; └── `estilos.css`
-├── `img/`
-├── `js/`
-│ &emsp;&emsp; └── `scripts.js`
-├── `index.html`
-└── `LEIAME.txt`
+* `index.html`: Ponto base do programa, o site principal.
+* `estilos.css`: Contém as funções responsáveis por estilizar o HTML.
+* `scripts.js`: Contém script e funcionalidades para o HTML
+* `LEIAME.txt`: Contém detalhes sobre o projeto e dos autores.
 
 ---
 
