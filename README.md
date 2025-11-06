@@ -39,8 +39,8 @@ O código fonte está organizado da seguinte maneira para garantir a modularidad
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/XXX">
-        <img src="https://github.com/XXX?size=100" width="100px;" alt="Foto de Camily Leal Silva no GitHub"/>
+      <a href="https://github.com/CamilyLeal">
+        <img src="https://github.com/CamilyLeal.png?size=100" width="100px;" alt="Foto de Camily Leal Silva no GitHub"/>
         <br />
         <sub>
           <b>Camily Leal S.</b>
