@@ -1,0 +1,6 @@
+# Arquivos do Sistema
+.DS_Store
+Thumbs.db
+
+# Pastas de dependência
+node_modules/
