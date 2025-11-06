@@ -4,9 +4,15 @@
 ![Linguagem](https://img.shields.io/badge/WEB-HTML%20CSS%20JS-blue.svg)
 ![Licença](https://img.shields.io/badge/licen%C3%A7a-MIT-green)
 
-> Projeto acadêmico da disciplina de Desenvolvimento WEB do IFMG - Campus Formiga. Um SITE A DEFINIR, desenvolvido em HTML, CSS e JavaScript.
+> Projeto acadêmico da disciplina de Desenvolvimento WEB do IFMG - Campus Formiga. Um trabalho FrontEnd para ver, apreçar e reservar quartos em Hoteis e Pousadas, desenvolvido em HTML, CSS e JavaScript.
 
 ---
+
+## 📖 Sobre o Projeto
+
+O **SRH** é um sistema de gerenciamento desenvolvido para Hoteis e Pousadas fictícias. O objetivo é centralizar e automatizar todas as operações do negócio, desde as reservas até o agendamento online, login e pagamento.
+
+Este projeto está sendo construído como requisito avaliativo para a disciplina de **Desenvolvimento WEB** no curso de Ciência da Computação do **IFMG - Campus Formiga**, sob a orientação da Prof. Danielle Costa.
 
 ## 📂 Estrutura de Arquivos
 
