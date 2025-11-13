@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
         (usuario === "kaua" && password === "123") ||
         (usuario === "camily" && password === "123")
       ) {
+        sessionStorage.setItem("usuarioLogado", usuario);
         window.location.href = "html/main.html";
         return;
       }

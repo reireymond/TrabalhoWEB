@@ -18,7 +18,7 @@ $(document).ready(function () {
 
     const badgeDisponibilidade = quarto.disponivel
       ? '<span class="badge bg-success">Disponível</span>'
-      : '<span class="badge bg-danger">Indisponível</span>';
+      : '<span class="badge bg-danger">Ocupado</span>';
 
     const cardHtml = `
       <div class="col">

@@ -1,6 +1,21 @@
-// js/main.js
+function verificarLogin() {
+  const usuario = sessionStorage.getItem("usuarioLogado");
+
+  if (usuario) {
+    const btnLoginLogout = $("#btn-login-logout");
+
+    btnLoginLogout.html('<i class="bi bi-box-arrow-right"></i> Sair');
+    btnLoginLogout.attr("href", "#");
+    btnLoginLogout.on("click", function (e) {
+      e.preventDefault();
+      sessionStorage.removeItem("usuarioLogado");
+      window.location.href = "../index.html";
+    });
+  }
+}
 
 $(document).ready(function () {
+  verificarLogin();
   carregarDados();
 
   const container = $("#featured-rooms-container");

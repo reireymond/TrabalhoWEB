@@ -20,12 +20,6 @@ Sistema de front-end para o Hotel Fênix (fictícil), dividido em duas áreas:
 3. Sistema de Login (index.html):
    - Validação de usuários (admin, kaua, camily).
    - Telas conceituais para "Criar Conta" e "Esqueci a Senha".
-        - Administração
-        login: admin 
-        senha: fenix
-        - Usuário
-        login: kaua 
-        senha: 123
 
 4. Persistência de Dados:
    - O sistema usa localStorage para salvar os quartos cadastrados.
