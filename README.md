@@ -1,4 +1,4 @@
-# Sistema de Reserva de Hotel (SRH)
+# Hotel Fênix (SRH)
 
 ![Status do Projeto](https://img.shields.io/badge/status-em%20desenvolvimento-yellowgreen)
 ![Linguagem](https://img.shields.io/badge/WEB-HTML%20CSS%20JS-blue.svg)
@@ -10,18 +10,61 @@
 
 ## 📖 Sobre o Projeto
 
-O **SRH** é um sistema de gerenciamento desenvolvido para Hoteis e Pousadas fictícias. O objetivo é centralizar e automatizar todas as operações do negócio, desde as reservas até o agendamento online, login e pagamento.
+O **SRH** é um sistema de front-end para o **Hotel Fênix**. O projeto foi dividido em duas partes principais:
 
-Este projeto está sendo construído como requisito avaliativo para a disciplina de **Desenvolvimento WEB** no curso de Ciência da Computação do **IFMG - Campus Formiga**, sob a orientação da Prof. Danielle Costa.
+1.  **Área do Cliente:** Onde os usuários podem navegar pelo site, ver informações, quartos e simular login.
+2.  **Área Administrativa:** Um painel para o gerente do hotel adicionar, editar e remover os quartos disponíveis.
+
+Todo o projeto foi construído usando **HTML, CSS e JavaScript**, com **Bootstrap** como framework principal. Os dados são salvos no navegador usando **localStorage** e **sessionStorage**.
+
+## 🚀 Funcionalidades Implementadas
+
+* **Tema Unificado:** Todo o site (`main.html`, `admin.html`) segue a paleta de cores (vermelho escuro e bege) da tela de login.
+* **Sistema de Login:** A página `index.html` verifica os usuários:
+    * Redireciona para `admin.html` se o login for `admin`/`fenix`.
+    * Redireciona para `main.html` se o login for `kaua`/`123` ou `camily`/`123`.
+    * Mostra uma mensagem de erro estilizada se o login falhar.
+* **Controle de Sessão:** A `main.html` detecta se o usuário está logado (via `sessionStorage`) e troca o botão "Login" por "Sair".
+* **Páginas de Simulação:** Telas de "Criar Conta" e "Esqueci a Senha" funcionais (conceituais).
+* **Dashboard do Admin:**
+    * Layout profissional com barra lateral fixa.
+    * Cards de estatísticas (Total, Disponíveis, Ocupados) que se atualizam sozinhos.
+    * Gerenciamento de quartos (CRUD) que abre um pop-up (Modal) para Adicionar, Alterar e Excluir quartos.
+* **Persistência de Dados:** Os quartos são salvos no `localStorage` do navegador, então as mudanças feitas pelo admin são permanentes (no navegador).
+* **Homepage do Cliente:**
+    * Exibe os 3 quartos disponíveis mais recentes carregados do "banco de dados".
+    * Possui uma barra lateral (Offcanvas) para links de Informações.
+
+## 💻 Como Executar
+
+1.  Clone este repositório:
+    ```
+    git clone [https://github.com/reireymond/SRH.git](https://github.com/reireymond/SRH.git)
+    ```
+2.  Abra o arquivo `index.html` no seu navegador.
+3.  Use um dos logins abaixo para testar:
+    * **Admin:** `usuario: admin` / `senha: fenix`
+    * **Cliente:** `usuario: kaua` / `senha: 123`
 
 ## 📂 Estrutura de Arquivos
 
-O código fonte está organizado da seguinte maneira para garantir a modularidade e a fácil manutenção:
-
-* `index.html`: Ponto base do programa, o site principal.
-* `estilos.css`: Contém as funções responsáveis por estilizar o HTML.
-* `scripts.js`: Contém script e funcionalidades para o HTML
-* `LEIAME.txt`: Contém detalhes sobre o projeto e dos autores.
+* `index.html`: (Tela de Login)
+* `main.html`: (Home do Cliente)
+* `admin.html`: (Dashboard Admin)
+* `criarConta.html`: (Simulação)
+* `esqueciSenha.html`: (Simulação)
+* `css/`
+    * `login.css`: (Estilo do Login)
+    * `global.css`: (Tema principal do Bootstrap)
+    * `main.css`: (Estilos da home)
+    * `admin.css`: (Estilos do dashboard)
+* `js/`
+    * `login.js`: (Lógica de autenticação)
+    * `bancoDeDados.js`: (Funções `salvarDados`, `carregarDados` e dados iniciais)
+    * `admin.js`: (Lógica do dashboard, CRUD, modais)
+    * `main.js`: (Lógica da home, exibe quartos, botão Sair)
+* `img/`: (Imagens dos quartos e banner)
+* `images/`: (Imagens do login e logo)
 
 ---
 
