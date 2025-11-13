@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const password = document.getElementById("password").value;
 
       if (usuario === "admin" && password === "fenix") {
-        window.location.href = "admin.html";
+        window.location.href = "html/admin.html";
         return;
       }
 
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
         (usuario === "kaua" && password === "123") ||
         (usuario === "camily" && password === "123")
       ) {
-        window.location.href = "main.html";
+        window.location.href = "html/main.html";
         return;
       }
 
