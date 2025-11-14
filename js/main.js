@@ -115,20 +115,28 @@ $(document).ready(function () {
     sidebarInfoInstance = new bootstrap.Offcanvas(sidebarElement);
   }
 
-  $('#sidebarInfo .nav-link[href^="#"]').on('click', function(e) {
-    const targetId = $(this).attr('href');
-    const targetElement = $(targetId);
+  $('#sidebarInfo .nav-link').on('click', function(e) {
+    const link = $(this);
+    const href = link.attr('href');
+    const isLocalAnchor = href.startsWith('#');
+
+    e.preventDefault(); 
     
-    if (targetElement.length) { 
-      e.preventDefault(); 
-      
-      $('html, body').animate({
-        scrollTop: targetElement.offset().top - 56 
-      }, 500);
-      
-      if (sidebarInfoInstance) {
+    if (sidebarInfoInstance) {
         sidebarInfoInstance.hide();
+    }
+
+    if (isLocalAnchor) {
+      const targetElement = $(href);
+      if (targetElement.length) { 
+        $('html, body').animate({
+          scrollTop: targetElement.offset().top - 56 
+        }, 500);
       }
+    } else {
+      setTimeout(() => {
+          window.location.href = href;
+      }, 400);
     }
   });
 });
