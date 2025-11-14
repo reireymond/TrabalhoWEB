@@ -12,8 +12,8 @@
 
 O **SRH** é um sistema de front-end para o **Hotel Fênix**. O projeto foi dividido em duas partes principais:
 
-1.  **Área do Cliente:** Onde os usuários podem navegar pelo site, ver informações, quartos e simular login.
-2.  **Área Administrativa:** Um painel para o gerente do hotel adicionar, editar e remover os quartos disponíveis.
+1.  **Área do Cliente:** Onde os usuários podem navegar pelo site, ver informações, quartos, fazer simulação de reservas e login.
+2.  **Área Administrativa:** Um painel para o gerente do hotel adicionar, editar, remover os quartos disponíveis e gerenciar mensagens/reservas.
 
 Todo o projeto foi construído usando **HTML, CSS e JavaScript**, com **Bootstrap** como framework principal. Os dados são salvos no navegador usando **localStorage** e **sessionStorage**.
 
@@ -25,21 +25,20 @@ Todo o projeto foi construído usando **HTML, CSS e JavaScript**, com **Bootstra
     * Redireciona para `main.html` se o login for `kaua`/`123` ou `camily`/`123`.
     * Mostra uma mensagem de erro estilizada se o login falhar.
 * **Controle de Sessão:** A `main.html` detecta se o usuário está logado (via `sessionStorage`) e troca o botão "Login" por "Sair".
-* **Páginas de Simulação:** Telas de "Criar Conta" e "Esqueci a Senha" funcionais (conceituais).
+* **Páginas de Simulação:** Telas de "Criar Conta" e "Esqueci a Senha" conceituais.
+* **Menu de Navegação do Cliente (Melhoria):** A barra lateral (Offcanvas), presente nas páginas do cliente, agora fecha de forma consistente e suave ao navegar para outras seções (`main.html`) ou páginas (`quartos.html`, `minhasReservas.html`), garantindo usabilidade aprimorada.
 * **Dashboard do Admin:**
     * Layout profissional com barra lateral fixa.
     * Cards de estatísticas (Total, Disponíveis, Ocupados) que se atualizam sozinhos.
     * Gerenciamento de quartos (CRUD) que abre um pop-up (Modal) para Adicionar, Alterar e Excluir quartos.
-* **Persistência de Dados:** Os quartos são salvos no `localStorage` do navegador, então as mudanças feitas pelo admin são permanentes (no navegador).
-* **Homepage do Cliente:**
-    * Exibe os 3 quartos disponíveis mais recentes carregados do "banco de dados".
-    * Possui uma barra lateral (Offcanvas) para links de Informações.
+* **Persistência de Dados:** Os quartos, reservas e mensagens de contato são salvos no `localStorage` do navegador, então as mudanças feitas pelo admin são permanentes (no navegador).
+* **Homepage do Cliente:** Exibe os 3 quartos disponíveis mais recentes carregados do "banco de dados".
 
 ## 💻 Como Executar
 
 1.  Clone este repositório:
     ```
-    git clone https://github.com/reireymond/SRH.git
+    git clone [https://github.com/reireymond/SRH.git](https://github.com/reireymond/SRH.git)
     ```
 2.  Abra o arquivo `index.html` no seu navegador.
 3.  Use um dos logins abaixo para testar:
@@ -62,7 +61,8 @@ Todo o projeto foi construído usando **HTML, CSS e JavaScript**, com **Bootstra
     * `login.js`: (Lógica de autenticação)
     * `bancoDeDados.js`: (Funções `salvarDados`, `carregarDados` e dados iniciais)
     * `admin.js`: (Lógica do dashboard, CRUD, modais)
-    * `main.js`: (Lógica da home, exibe quartos, botão Sair)
+    * `main.js`: (Lógica da home, exibe quartos, botão Sair, Controle do Offcanvas)
+    * `quartos.js`: (Lógica de listagem de quartos e reservas)
 * `img/`: (Imagens dos quartos e banner)
 * `images/`: (Imagens do login e logo)
 
