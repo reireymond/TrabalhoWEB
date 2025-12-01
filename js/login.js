@@ -2,22 +2,45 @@ document.addEventListener("DOMContentLoaded", function () {
   const loginForm = document.getElementById("login-form");
   const loginError = document.getElementById("login-error");
   const usuarioInput = document.getElementById("usuario");
+  
+  const btnSenha = document.getElementById("btn-senha");
+  const inputSenha = document.getElementById("password");
+
+  if (btnSenha && inputSenha) {
+    btnSenha.addEventListener("click", function () {
+      if (inputSenha.type === "password") {
+        inputSenha.type = "text";
+        btnSenha.classList.remove("bi-eye-slash");
+        btnSenha.classList.add("bi-eye"); // Troca ícone para 'olho aberto'
+      } else {
+        inputSenha.type = "password";
+        btnSenha.classList.remove("bi-eye");
+        btnSenha.classList.add("bi-eye-slash"); // Troca ícone para 'olho fechado'
+      }
+    });
+  }
 
   if (usuarioInput) {
     usuarioInput.addEventListener("input", function (e) {
-      let value = e.target.value.replace(/\D/g, ""); // Remove tudo que não é número
-      
-      if (value.length > 11) value = value.slice(0, 11); // Limita a 11 dígitos
+      let value = e.target.value;
 
-      if (value.length > 9) {
-        value = value.replace(/^(\d{3})(\d{3})(\d{3})(\d{1,2}).*/, "$1.$2.$3-$4");
-      } else if (value.length > 6) {
-        value = value.replace(/^(\d{3})(\d{3})(\d{0,3}).*/, "$1.$2.$3");
-      } else if (value.length > 3) {
-        value = value.replace(/^(\d{3})(\d{0,3}).*/, "$1.$2");
+      const temLetras = /[a-zA-Z]/.test(value);
+
+      if (!temLetras) {
+        let numbers = value.replace(/\D/g, ""); // Remove tudo que não é dígito
+        
+        if (numbers.length > 11) numbers = numbers.slice(0, 11);
+
+        if (numbers.length > 9) {
+          numbers = numbers.replace(/^(\d{3})(\d{3})(\d{3})(\d{1,2}).*/, "$1.$2.$3-$4");
+        } else if (numbers.length > 6) {
+          numbers = numbers.replace(/^(\d{3})(\d{3})(\d{0,3}).*/, "$1.$2.$3");
+        } else if (numbers.length > 3) {
+          numbers = numbers.replace(/^(\d{3})(\d{0,3}).*/, "$1.$2");
+        }
+        
+        e.target.value = numbers;
       }
-      
-      e.target.value = value;
     });
   }
 
@@ -31,7 +54,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const usuarioLimpo = usuarioDigitado.replace(/\D/g, "");
 
-      if (usuarioDigitado.toLowerCase() === "1111" && password === "fenix") {
+      if (
+        (usuarioDigitado.toLowerCase() === "admin" || usuarioDigitado === "1111") && 
+        password === "fenix"
+      ) {
         window.location.href = "html/admin.html";
         return;
       }
