@@ -27,7 +27,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (!temLetras) {
         let numbers = value.replace(/\D/g, "");
+        
         if (numbers.length > 11) numbers = numbers.slice(0, 11);
+
         if (numbers.length > 9) {
           numbers = numbers.replace(/^(\d{3})(\d{3})(\d{3})(\d{1,2}).*/, "$1.$2.$3-$4");
         } else if (numbers.length > 6) {
@@ -35,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } else if (numbers.length > 3) {
           numbers = numbers.replace(/^(\d{3})(\d{0,3}).*/, "$1.$2");
         }
+        
         e.target.value = numbers;
       }
     });
@@ -47,6 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const usuarioDigitado = document.getElementById("usuario").value;
       const password = document.getElementById("password").value;
+
       const usuarioLimpo = usuarioDigitado.replace(/\D/g, "");
 
       if (
@@ -62,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
         (usuarioLimpo === "12345678900" && password === "123")
       ) {
         sessionStorage.setItem("usuarioLogado", usuarioDigitado);
-        window.location.href = "../index.html"; 
+        window.location.href = "../index.html";
         return;
       }
 
