@@ -42,8 +42,8 @@ Todo o projeto foi construído usando **HTML, CSS e JavaScript**, com **Bootstra
     ```
 2.  Abra o arquivo `index.html` no seu navegador.
 3.  Use um dos logins abaixo para testar:
-    * **Admin:** `usuario: admin` / `senha: fenix`
-    * **Cliente:** `usuario: kaua` / `senha: 123`
+    * **Admin:** `cpf: 1111` / `senha: fenix`
+    * **Cliente:** `cpf: 12345678900` / `senha: 123`
 
 ## 📂 Estrutura de Arquivos
 
