@@ -11,11 +11,11 @@ document.addEventListener("DOMContentLoaded", function () {
       if (inputSenha.type === "password") {
         inputSenha.type = "text";
         btnSenha.classList.remove("bi-eye-slash");
-        btnSenha.classList.add("bi-eye"); // Troca ícone para 'olho aberto'
+        btnSenha.classList.add("bi-eye");
       } else {
         inputSenha.type = "password";
         btnSenha.classList.remove("bi-eye");
-        btnSenha.classList.add("bi-eye-slash"); // Troca ícone para 'olho fechado'
+        btnSenha.classList.add("bi-eye-slash");
       }
     });
   }
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const temLetras = /[a-zA-Z]/.test(value);
 
       if (!temLetras) {
-        let numbers = value.replace(/\D/g, ""); // Remove tudo que não é dígito
+        let numbers = value.replace(/\D/g, "");
         
         if (numbers.length > 11) numbers = numbers.slice(0, 11);
 
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const usuarioLimpo = usuarioDigitado.replace(/\D/g, "");
 
       if (
-        (usuarioDigitado.toLowerCase() === "admin" || usuarioDigitado === "1111") && 
+        (usuarioDigitado.toLowerCase() === "admin" || usuarioDigitado === "111") && 
         password === "fenix"
       ) {
         window.location.href = "html/admin.html";
