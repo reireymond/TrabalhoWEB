@@ -31,13 +31,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const usuarioLimpo = usuarioDigitado.replace(/\D/g, "");
 
-      if (usuarioDigitado.toLowerCase() === "admin" && password === "fenix") {
+      if (usuarioDigitado.toLowerCase() === "1111" && password === "fenix") {
         window.location.href = "html/admin.html";
         return;
       }
 
       if (
-        (usuarioDigitado === "teste" && password === "123") ||
+        (usuarioDigitado === "00000000000" && password === "123") ||
         (usuarioLimpo === "12345678900" && password === "123")
       ) {
         sessionStorage.setItem("usuarioLogado", usuarioDigitado);
