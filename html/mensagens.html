@@ -51,33 +51,42 @@
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
     <script src="../js/admin.js"></script>
 
     <script>
       $(document).ready(function () {
         const container = $("#container-mensagens");
-        const mensagens =
-          JSON.parse(localStorage.getItem("hotelFenixMensagens")) || [];
+        const mensagens = JSON.parse(localStorage.getItem("hotelFenixMensagens")) || [];
 
         if (mensagens.length === 0) {
           container.html(
-            '<p class="text-center col-12">Nenhuma mensagem recebida.</p>'
+            '<div class="col-12"><div class="alert alert-info text-center">Nenhuma mensagem recebida ainda.</div></div>'
           );
           return;
         }
 
+        container.empty();
+
         mensagens.reverse().forEach((msg) => {
           const cardHtml = `
-            <div class="col-md-6 col-lg-4 mb-3">
-              <div class="card h-100">
-                <div class="card-header d-flex justify-content-between align-items-center">
-                  <strong>${msg.nome}</strong>
-                  <small class="text-muted">${msg.data}</small>
+            <div class="col-md-6 col-lg-4 mb-4">
+              <div class="card h-100 shadow-sm border-0">
+                <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                  <strong class="text-primary">${msg.nome}</strong>
+                  <small class="text-muted" style="font-size: 0.8rem;">${msg.data}</small>
                 </div>
                 <div class="card-body">
-                  <h6 class="card-subtitle mb-2 text-muted">${msg.email}</h6>
-                  <p class="card-text">${msg.mensagem}</p>
+                  <h6 class="card-subtitle mb-3 text-muted">
+                    <i class="bi bi-envelope"></i> ${msg.email}
+                  </h6>
+                  <p class="card-text p-3 bg-light rounded">
+                    "${msg.mensagem}"
+                  </p>
+                </div>
+                <div class="card-footer bg-white border-top-0 text-end">
+                   <a href="mailto:${msg.email}" class="btn btn-sm btn-outline-primary">
+                     <i class="bi bi-reply"></i> Responder
+                   </a>
                 </div>
               </div>
             </div>
