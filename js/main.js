@@ -137,9 +137,6 @@ $(document).ready(function () {
     let href = link.attr('href');
     const isLocalAnchor = href.startsWith('#');
 
-    if (!window.location.pathname.includes("/html/") && !href.startsWith("http") && !isLocalAnchor && !href.startsWith("html/")) {
-    }
-
     e.preventDefault(); 
     
     if (sidebarInfoInstance) {
