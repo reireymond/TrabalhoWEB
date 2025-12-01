@@ -45,19 +45,7 @@
           <a class="nav-link text-white-50" href="minhasReservas.html">
             <i class="bi bi-calendar-heart me-2"></i> Minhas Reservas
           </a>
-          <a class="nav-link text-white-50" href="main.html#secao-quemsomos">
-            <i class="bi bi-info-square-fill me-2"></i> Quem Somos
-          </a>
-          <a class="nav-link text-white-50" href="main.html#secao-galeria">
-            <i class="bi bi-camera-fill me-2"></i> Galeria de Fotos
-          </a>
-          <a class="nav-link text-white-50" href="main.html#secao-localizacao">
-            <i class="bi bi-geo-alt-fill me-2"></i> Localização
-          </a>
-          <a class="nav-link text-white-50" href="main.html#secao-contato">
-            <i class="bi bi-person-lines-fill me-2"></i> Fale Conosco
-          </a>
-        </nav>
+          </nav>
 
         <div class="mt-auto p-3">
           <a
@@ -195,6 +183,28 @@
             >
               Confirmar Reserva
             </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modalLoginRequired" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <h5 class="modal-title fw-bold text-danger">Login Necessário</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-center">
+            <div class="mb-3">
+              <i class="bi bi-person-lock fs-1 text-danger"></i>
+            </div>
+            <p class="fs-5">Para realizar uma reserva, você precisa estar logado.</p>
+            <p class="text-muted">Por favor, faça login para continuar.</p>
+          </div>
+          <div class="modal-footer border-0 justify-content-center">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-primary" id="btn-ir-login">Ir para Login</button>
           </div>
         </div>
       </div>
