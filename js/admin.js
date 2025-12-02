@@ -20,10 +20,12 @@ function atualizarStats() {
   const totalQuartos = bancoDeDadosQuartos.length;
   const disponiveis = bancoDeDadosQuartos.filter((q) => q.disponivel).length;
   const ocupados = totalQuartos - disponiveis;
+  const totalVisitas = localStorage.getItem("hotelFenixVisitas") || 0;
 
   $("#stat-total-quartos").text(totalQuartos);
   $("#stat-disponiveis").text(disponiveis);
   $("#stat-ocupados").text(ocupados);
+  $("#stat-visitas").text(totalVisitas);
 }
 
 function renderizarTabelaQuartos() {
@@ -56,30 +58,6 @@ function renderizarTabelaQuartos() {
             </tr>
         `;
     tabelaQuartos.append(linhaQuarto);
-
-    const nomeHospede = quarto.nomeHospede || quarto.usuario || "N/A";
-    const cpfHospede = quarto.cpfHospede || "-";
-
-    const linhaReserva = `
-            <tr data-id="${quarto.id}">
-                <td>${quarto.id}</td>
-                <td>${quarto.nome}</td>
-                <td>
-                    <strong>${nomeHospede}</strong><br>
-                    <small class="text-muted">${cpfHospede}</small>
-                </td>
-                <td>${checkinFormatado}</td>
-                <td>${checkoutFormatado}</td>
-                <td>${diarias}</td>
-                <td>${totalFormatado}</td>
-                <td class="text-center">
-                    <button class="btn btn-warning btn-sm btn-cancelar-reserva" data-id="${quarto.id}" title="Cancelar Reserva">
-                        <i class="bi bi-x-lg"></i> Cancelar
-                    </button>
-                </td>
-            </tr>
-        `;
-    tabelaReservas.append(linhaReserva);
   });
 
   atualizarStats();
