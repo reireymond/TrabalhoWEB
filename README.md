@@ -12,28 +12,20 @@
 
 O **SRH** é um sistema de front-end para o **Hotel Fênix** (fictício). O projeto foi dividido em duas partes principais:
 
-1.  **Área do Cliente:** Onde os usuários podem navegar pelo site, ver informações, quartos, fazer simulação de reservas e login.
-2.  **Área Administrativa:** Um painel para o gerente do hotel adicionar, editar, remover os quartos disponíveis e gerenciar mensagens/reservas.
-
-Todo o projeto foi construído usando **HTML, CSS e JavaScript**, com **Bootstrap** como framework principal. Os dados são salvos no navegador usando **localStorage** e **sessionStorage**.
+1.  **Área do Cliente:** Página inicial (`index.html`), listagem de quartos, "Minhas Reservas" e login.
+2.  **Área Administrativa:** Um painel para gerenciar quartos, reservas, mensagens e visualizar o contador de visitas.
 
 ## 🚀 Funcionalidades Implementadas
 
-* **Tema Unificado:** Todo o site (`main.html`, `admin.html`) segue a paleta de cores (vermelho escuro e bege) da tela de login.
-* **Sistema de Login:** A página `index.html` verifica os usuários:
-    * Redireciona para `admin.html` se o login for `1111`/`fenix`.
-    * Redireciona para `main.html` se o login for `000.000.000-00`/`123` ou `123.456.789-00`/`123`.
-    * Mostra uma mensagem de erro estilizada se o login falhar.
-* **Controle de Sessão:** A `main.html` detecta se o usuário está logado (via `sessionStorage`) e troca o botão "Login" por "Sair".
-* **Páginas de Simulação:** Telas de "Criar Conta" e "Esqueci a Senha" conceituais.
-* **Menu de Navegação do Cliente (Melhoria):** A barra lateral (Offcanvas), presente nas páginas do cliente, agora fecha de forma consistente e suave ao navegar para outras seções (`main.html`) ou páginas (`quartos.html`, `minhasReservas.html`), garantindo usabilidade aprimorada.
+* **Sistema de Login:** A página `html/login.html` verifica os usuários:
+    * Admin: `cpf: admin` / `senha: fenix` (Redireciona para o Dashboard).
+    * Cliente: `cpf: 12345678900` / `senha: 123` (Redireciona para a Home).
+* **Contador de Visitas:** Conta cada acesso à página inicial e exibe o total no Dashboard do Admin.
 * **Dashboard do Admin:**
-    * Layout profissional com barra lateral fixa.
-    * Cards de estatísticas (Total, Disponíveis, Ocupados) que se atualizam sozinhos.
-    * Gerenciamento de quartos (CRUD) que abre um pop-up (Modal) para Adicionar, Alterar e Excluir quartos.
-* **Persistência de Dados:** Os quartos, reservas e mensagens de contato são salvos no `localStorage` do navegador, então as mudanças feitas pelo admin são permanentes (no navegador).
-* **Homepage do Cliente:** Exibe os 3 quartos disponíveis mais recentes carregados do "banco de dados".
-
+    * Cards de estatísticas (incluindo contador de visitas).
+    * CRUD de quartos (Adicionar, Editar, Excluir).
+    * Visualização de Reservas e Mensagens de Contato.
+* **Persistência de Dados:** Todos os dados (quartos, reservas, visitas) ficam salvos no `localStorage`.
 ## 💻 Como Executar
 
 1.  Clone este repositório:
@@ -47,24 +39,13 @@ Todo o projeto foi construído usando **HTML, CSS e JavaScript**, com **Bootstra
 
 ## 📂 Estrutura de Arquivos
 
-* `index.html`: (Tela de Login)
-* `main.html`: (Home do Cliente)
-* `admin.html`: (Dashboard Admin)
-* `criarConta.html`: (Simulação)
-* `esqueciSenha.html`: (Simulação)
-* `css/`
-    * `login.css`: (Estilo do Login)
-    * `global.css`: (Tema principal do Bootstrap)
-    * `main.css`: (Estilos da home)
-    * `admin.css`: (Estilos do dashboard)
-* `js/`
-    * `login.js`: (Lógica de autenticação)
-    * `bancoDeDados.js`: (Funções `salvarDados`, `carregarDados` e dados iniciais)
-    * `admin.js`: (Lógica do dashboard, CRUD, modais)
-    * `main.js`: (Lógica da home, exibe quartos, botão Sair, Controle do Offcanvas)
-    * `quartos.js`: (Lógica de listagem de quartos e reservas)
-* `img/`: (Imagens dos quartos e banner)
-* `images/`: (Imagens do login e logo)
+* `index.html`: **Página Inicial (Home)**
+* `html/login.html`: Tela de Login
+* `html/admin.html`: Dashboard do Administrador
+* `html/quartos.html`: Listagem de quartos
+* `js/`: Scripts de lógica e banco de dados simulado.
+* `css/`: Estilos globais e específicos.
+* `docs/`: Documentação e **laudo.pdf** (Checklist de Usabilidade).
 
 ---
 
