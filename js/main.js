@@ -184,23 +184,3 @@ $(document).ready(function () {
     }
   });
 });
-
-// GOOGLE MAPS
-function initMap() {
-  if ($("#mapa").length > 0) {
-    const localizacaoHotel = { lat: -20.4663, lng: -45.4287 };
-
-    // Cria mapa
-    const mapa = new google.maps.Map(document.getElementById("mapa"), {
-      zoom: 15,
-      center: localizacaoHotel,
-    });
-
-    // Adiciona marcador
-    const marker = new google.maps.Marker({
-      position: localizacaoHotel,
-      map: mapa,
-      title: "Hotel Fênix",
-    });
-  }
-}
