@@ -20,7 +20,7 @@ Sistema de front-end para o Hotel Fênix (fictício), dividido em duas áreas:
    - Visualização de reservas e mensagens recebidas.
 
 3. Sistema de Login (html/login.html):
-   - Validação de usuários (admin: 1111/fenix, cliente: 12345678900/123).
+   - Validação de usuários (admin: 111/fenix, cliente: 12345678900/123).
    - Telas conceituais para "Criar Conta" e "Esqueci a Senha".
 
 4. Persistência de Dados:
